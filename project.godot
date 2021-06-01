@@ -14,6 +14,10 @@ config/name="tic-tac-godot"
 run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Common="*res://scenes/Common.gd"
+
 [display]
 
 window/size/width=320

@@ -1,7 +1,5 @@
 extends Node2D
 
-const Common = preload("res://scenes/Common.gd")
-
 onready var pieces = $Board/Pieces
 onready var start_button = $UI/StartButton
 onready var message_box = $UI/MessageBox

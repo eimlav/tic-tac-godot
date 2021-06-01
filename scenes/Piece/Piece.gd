@@ -1,7 +1,5 @@
 extends Node2D
 
-const Common = preload("res://scenes/Common.gd")
-
 signal clicked
 
 const OTexture = preload("res://assets/o.png")
