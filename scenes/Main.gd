@@ -6,6 +6,7 @@ onready var message_box = $UI/MessageBox
 
 var current_player = null
 var game_active = false
+var turn = 0
 
 var state = [
 	-1,-1,-1,
@@ -37,6 +38,7 @@ func on_start_clicked():
 func start():
 	current_player = Common.PlayerType.ONE
 	game_active = true
+	turn = 0
 
 	for piece in pieces.get_children():
 		piece.reset()
@@ -79,7 +81,13 @@ func check_game_state():
 	for win_state in win_states:
 		if player_state == win_state:
 			set_message("Player %s wins!" % (current_player + 1))
-			end_game()
+			return end_game()
+			
+	turn += 1
+
+	if turn == 9:
+		set_message("Draw!")
+		end_game()
 
 func add_player_state(index : int, player : int):
 	state[index] = player
