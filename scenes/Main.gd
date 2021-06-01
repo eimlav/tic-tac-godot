@@ -79,7 +79,14 @@ func check_game_state():
 	var player_state = get_player_state(current_player)
 	
 	for win_state in win_states:
-		if player_state == win_state:
+		var matches = 0
+
+		for win_pos in win_state:
+			if player_state.find(win_pos) == -1:
+				break
+			matches += 1
+		
+		if matches == 3:
 			set_message("Player %s wins!" % (current_player + 1))
 			return end_game()
 			
