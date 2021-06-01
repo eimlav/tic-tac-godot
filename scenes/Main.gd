@@ -47,7 +47,7 @@ func start():
 	
 	state = [-1,-1,-1,-1,-1,-1,-1,-1,-1]
 	
-	set_message("Player %s's turn" % current_player)
+	set_message("Player %s's turn" % (current_player + 1))
 
 
 func on_piece_clicked(piece):
