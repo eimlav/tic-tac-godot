@@ -1,0 +1,143 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/bg.png" type="Texture" id=1]
+[ext_resource path="res://assets/board.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Piece/Piece.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/DefaultFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://scenes/Main.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 1, 0.207843, 0.207843, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 0.772549, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 1, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 160, 161 )
+texture = ExtResource( 1 )
+
+[node name="Board" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite" parent="Board"]
+position = Vector2( 160, 160 )
+texture = ExtResource( 2 )
+
+[node name="Pieces" type="Node2D" parent="Board"]
+
+[node name="Piece" parent="Board/Pieces" instance=ExtResource( 3 )]
+position = Vector2( 95, 87 )
+
+[node name="Piece2" parent="Board/Pieces" instance=ExtResource( 3 )]
+position = Vector2( 160, 87 )
+index = 1
+
+[node name="Piece3" parent="Board/Pieces" instance=ExtResource( 3 )]
+position = Vector2( 225, 87 )
+index = 2
+
+[node name="Piece4" parent="Board/Pieces" instance=ExtResource( 3 )]
+position = Vector2( 95, 152 )
+index = 3
+
+[node name="Piece5" parent="Board/Pieces" instance=ExtResource( 3 )]
+position = Vector2( 160, 152 )
+index = 4
+
+[node name="Piece6" parent="Board/Pieces" instance=ExtResource( 3 )]
+position = Vector2( 225, 152 )
+index = 5
+
+[node name="Piece7" parent="Board/Pieces" instance=ExtResource( 3 )]
+position = Vector2( 95, 217 )
+index = 6
+
+[node name="Piece8" parent="Board/Pieces" instance=ExtResource( 3 )]
+position = Vector2( 160, 217 )
+index = 7
+
+[node name="Piece9" parent="Board/Pieces" instance=ExtResource( 3 )]
+position = Vector2( 225, 217 )
+index = 8
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MessageBox" type="Label" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.979
+anchor_right = 0.5
+anchor_bottom = 0.995
+margin_left = -114.0
+margin_top = -23.88
+margin_right = 114.0
+margin_bottom = 0.119995
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -20.0
+margin_right = 80.0
+margin_bottom = 20.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = ExtResource( 4 )
+text = "New Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
